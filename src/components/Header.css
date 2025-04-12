@@ -1,0 +1,144 @@
+/* Header */
+.header {
+  background: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Убедитесь, что header имеет меньший z-index */
+}
+
+/* Контейнер для контента хедера */
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Логотип */
+.logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2d3436;
+}
+
+/* Поиск */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #f5f6fa;
+  border-radius: 25px;
+  padding: 5px 15px;
+  width: 400px;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 8px;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #2d3436;
+}
+
+/* Кнопка логина */
+.login-button {
+  background: #0984e3;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.login-button:hover {
+  background: #0873c4;
+}
+
+/* Модальное окно */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Затемнение фона */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* Высокий z-index для модального окна */
+}
+
+/* Контент модального окна */
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+  position: relative;
+  z-index: 10000; /* Еще более высокий z-index для содержимого */
+}
+
+/* Вкладки для модального окна */
+.modal-tabs {
+  display: flex;
+  margin-bottom: 1.5rem;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-bottom: 2px solid #eee;
+}
+
+.tab.active {
+  border-bottom: 2px solid #0984e3;
+  color: #0984e3;
+  font-weight: 500;
+}
+
+/* Форма авторизации */
+.auth-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  background: #0984e3;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Кнопка закрытия модального окна */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}

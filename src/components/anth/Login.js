@@ -1,0 +1,45 @@
+// src/components/Login.js
+import React, { useState } from 'react';
+import './Login.css';
+
+const Login = ({ onSuccess  }) => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleLogin = () => {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Поиск пользователя в LocalStorage
+    const user = users.find(user => user.username === username && user.password === password);
+
+    if (user) {
+      setMessage('Вход успешен!');
+      onSuccess();  // Закрываем модальное окно после успешного входа
+    } else {
+      setMessage('Неверное имя пользователя или пароль.');
+    }
+  };
+
+  return (
+    <form onSubmit={(e) => { e.preventDefault(); handleLogin(); }} className="login-form">
+      <h2>Вход</h2>
+      <input
+        type="text"
+        placeholder="Имя пользователя"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Пароль"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button type="submit">Войти</button>
+      {message && <p className={message.includes('успешен') ? 'success' : ''}>{message}</p>}
+    </form>
+  );
+};
+
+export default Login;

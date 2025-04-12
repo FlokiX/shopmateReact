@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Используем Routes вместо Switch
+import HomePage from './pages/HomePage'; // Главная страница
+import CartPage from './pages/CartPage'; // Страница корзины
+import { CartProvider } from './contexts/CartContext'; // Контекст корзины
+import './styles.css';
+import ProductList from './components/ProductList';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <CartProvider>
+      <Router>
+        <div className="App">
+          <Routes>
+            {/* Здесь используем element для рендеринга компонентов */}
+            <Route path="/" element={<HomePage />} /> {/* Главная страница */}
+            <Route path="/cart" element={<CartPage />} /> {/* Страница корзины */}
+            <Route path="/category/:categoryId" element={<ProductList />} />
+          </Routes>
+        </div>
+      </Router>
+    </CartProvider>
   );
 }
 

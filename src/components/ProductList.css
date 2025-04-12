@@ -1,0 +1,44 @@
+.product-list {
+    padding: 30px 20px;
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  
+  /* Добавьте обертку для контента */
+  .main-content {
+    padding-top: 20px; /* Дополнительный отступ */
+    min-height: calc(100vh - 160px); /* Высота минус хедер и футер */
+  }
+
+  .product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .product-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2d3436;
+  }
+  
+  .close-button {
+    background: none;
+    border: none;
+    font-size: 30px;
+    color: #2d3436;
+    cursor: pointer;
+  }
+  
+  .close-button:hover {
+    color: #0984e3;
+  }
+  

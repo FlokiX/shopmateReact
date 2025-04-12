@@ -1,0 +1,86 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "name": "Электроника",
+      "image": "Электроника.png"
+    },
+    {
+      "id": 2,
+      "name": "Одежда",
+      "image": "clothing.png"
+    },
+    {
+      "id": 3,
+      "name": "Книги",
+      "image": "books.png"
+    },
+    {
+      "id": 4,
+      "name": "Игрушки",
+      "image": "toys.png"
+    },
+    {
+      "id": 5,
+      "name": "Обувь",
+      "image": "shoes.png"
+    },
+    {
+      "id": 6,
+      "name": "Товары для дома",
+      "image": "homeware.png"
+    },
+    {
+      "id": 7,
+      "name": "Спорт и отдых",
+      "image": "sports.png"
+    },
+    {
+      "id": 8,
+      "name": "Автотовары",
+      "image": "automotive.png"
+    }
+  ],
+  "products": [
+    { "id": 1, "name": "Смартфон Galaxy S23", "categoryId": 1, "price": 800, "image": "galaxy_s23.png" },
+    { "id": 2, "name": "Ноутбук MacBook Air M2", "categoryId": 1, "price": 1200, "image": "macbook_air_m2.png" },
+    { "id": 3, "name": "Наушники Sony WH-1000XM5", "categoryId": 1, "price": 350, "image": "sony_wh1000xm5.png" },
+    { "id": 4, "name": "Смарт-часы Apple Watch Series 8", "categoryId": 1, "price": 400, "image": "apple_watch_s8.png" },
+    { "id": 5, "name": "Планшет iPad Pro 12.9\"", "categoryId": 1, "price": 1000, "image": "ipad_pro_12_9.png" },
+    { "id": 6, "name": "Джинсы мужские классические", "categoryId": 2, "price": 70, "image": "mens_jeans.png" },
+    { "id": 7, "name": "Свитер женский кашемировый", "categoryId": 2, "price": 120, "image": "womens_sweater.png" },
+    { "id": 8, "name": "Рубашка поло мужская", "categoryId": 2, "price": 45, "image": "mens_polo.png" },
+    { "id": 9, "name": "Платье летнее женское", "categoryId": 2, "price": 60, "image": "womens_dress.png" },
+    { "id": 10, "name": "Пальто зимнее мужское", "categoryId": 2, "price": 200, "image": "mens_coat.png" },
+    { "id": 11, "name": "Гарри Поттер и философский камень", "categoryId": 3, "price": 12, "image": "harry_potter_1.png" },
+    { "id": 12, "name": "Мастер и Маргарита", "categoryId": 3, "price": 18, "image": "master_i_margarita.jpg" },
+    { "id": 13, "name": "1984", "categoryId": 3, "price": 10, "image": "1984_book.jpg" },
+    { "id": 14, "name": "Властелин колец: Братство Кольца", "categoryId": 3, "price": 25, "image": "lord_of_the_rings_1.jpg" },
+    { "id": 15, "name": "Убить пересмешника", "categoryId": 3, "price": 15, "image": "to_kill_a_mockingbird.jpg" },
+    { "id": 16, "name": "Конструктор LEGO Technic Bugatti Chiron", "categoryId": 4, "price": 400, "image": "lego_bugatti.jpg" },
+    { "id": 17, "name": "Мягкая игрушка медведь Тедди", "categoryId": 4, "price": 30, "image": "teddy_bear.jpg" },
+    { "id": 18, "name": "Настольная игра Монополия", "categoryId": 4, "price": 35, "image": "monopoly_game.jpg" },
+    { "id": 19, "name": "Радиоуправляемая машинка", "categoryId": 4, "price": 50, "image": "rc_car.jpg" },
+    { "id": 20, "name": "Кукла Барби", "categoryId": 4, "price": 20, "image": "barbie_doll.jpg" },
+    { "id": 21, "name": "Кроссовки Nike Air Max 90", "categoryId": 5, "price": 130, "image": "nike_air_max_90.jpg" },
+    { "id": 22, "name": "Ботинки кожаные мужские", "categoryId": 5, "price": 150, "image": "mens_leather_boots.jpg" },
+    { "id": 23, "name": "Туфли женские на каблуке", "categoryId": 5, "price": 90, "image": "womens_heels.jpg" },
+    { "id": 24, "name": "Кеды Converse Chuck Taylor All Star", "categoryId": 5, "price": 60, "image": "converse_chuck_taylor.jpg" },
+    { "id": 25, "name": "Сандалии летние женские", "categoryId": 5, "price": 50, "image": "womens_sandals.jpg" },
+    { "id": 26, "name": "Набор кастрюль из нержавеющей стали", "categoryId": 6, "price": 180, "image": "pot_set.jpg" },
+    { "id": 27, "name": "Постельное белье двуспальное", "categoryId": 6, "price": 75, "image": "bedding_set.jpg" },
+    { "id": 28, "name": "Набор столовых приборов на 6 персон", "categoryId": 6, "price": 55, "image": "cutlery_set.jpg" },
+    { "id": 29, "name": "Пылесос беспроводной", "categoryId": 6, "price": 250, "image": "cordless_vacuum.jpg" },
+    { "id": 30, "name": "Утюг с парогенератором", "categoryId": 6, "price": 120, "image": "steam_iron.jpg" },
+    { "id": 31, "name": "Велосипед горный", "categoryId": 7, "price": 300, "image": "mountain_bike.jpg" },
+    { "id": 32, "name": "Палатка туристическая двухместная", "categoryId": 7, "price": 100, "image": "tent_2_person.jpg" },
+    { "id": 33, "name": "Футбольный мяч", "categoryId": 7, "price": 30, "image": "football.jpg" },
+    { "id": 34, "name": "Рюкзак туристический 60л", "categoryId": 7, "price": 80, "image": "backpack_60l.jpg" },
+    { "id": 35, "name": "Роликовые коньки", "categoryId": 7, "price": 70, "image": "roller_skates.jpg" },
+    { "id": 36, "name": "Автомобильное масло синтетическое 5W-30", "categoryId": 8, "price": 40, "image": "car_oil.jpg" },
+    { "id": 37, "name": "Автомобильные шины зимние комплект", "categoryId": 8, "price": 400, "image": "winter_tires.jpg" },
+    { "id": 38, "name": "Автомобильный аккумулятор", "categoryId": 8, "price": 120, "image": "car_battery.jpg" },
+    { "id": 39, "name": "Автомобильный компрессор", "categoryId": 8, "price": 50, "image": "car_compressor.jpg" },
+    { "id": 40, "name": "Автомобильные чехлы на сиденья", "categoryId": 8, "price": 80, "image": "car_seat_covers.jpg" }
+  ]
+}
