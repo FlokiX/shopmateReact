@@ -1,11 +1,19 @@
 // src/components/Login.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Login.css';
 
-const Login = ({ onSuccess  }) => {
+const Login = ({ onSuccess }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [message, setMessage] = useState('');
+
+  // Проверка авторизации при монтировании компонента
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('isLoggedIn');
+    if (loggedIn === 'true') {
+      onSuccess(); // Если пользователь уже авторизован, вызываем onSuccess
+    }
+  }, [onSuccess]);
 
   const handleLogin = () => {
     const users = JSON.parse(localStorage.getItem('users')) || [];
@@ -15,6 +23,8 @@ const Login = ({ onSuccess  }) => {
 
     if (user) {
       setMessage('Вход успешен!');
+      localStorage.setItem('isLoggedIn', 'true'); // Сохраняем состояние авторизации
+      localStorage.setItem('username', username); // Сохраняем имя пользователя
       onSuccess();  // Закрываем модальное окно после успешного входа
     } else {
       setMessage('Неверное имя пользователя или пароль.');

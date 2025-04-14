@@ -4,7 +4,7 @@ import './CartItem.css';
 const CartItem = ({ item, onRemove, onUpdate }) => {
   return (
     <div className="cart-item">
-      <img src={item.image} alt={item.name} />
+      <img src={process.env.PUBLIC_URL + `/images/${item.image}`} />
       <div className="cart-info">
         <h3>{item.name}</h3>
         <p>{item.price} ₽</p>

@@ -1,23 +1,70 @@
-// pages/HomePage.js
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import CategoryList from '../components/CategoryList'; // Импортируем CategoryList
-import Header from '../components/Header'; // Импортируем Header
-import data from '../data/products.json'; // Импортируем данные из JSON файла
+import Header from '../components/Header';
+import CategoryList from '../components/CategoryList';
+import ProductCard from '../components/ProductCard';
+import data from '../data/products.json';
 
 const HomePage = () => {
   const [categories, setCategories] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    // Загружаем категории из JSON
     setCategories(data.categories);
   }, []);
 
+  const allProducts = data.products.map(product => {
+    const category = data.categories.find(c => c.id === product.categoryId);
+    return {
+      ...product,
+      categoryName: category ? category.name : 'Неизвестная категория'
+    };
+  });
+
+  const filteredProducts = allProducts.filter(product =>
+    product.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const handleClearSearch = () => {
+    setSearchQuery('');
+  };
+
   return (
     <div className="home-page">
-      <Header /> {/* Добавляем Header */}
-      <h1>Категории</h1>
-      <CategoryList categories={categories} />  {/* Здесь отображаем категории */}
+      <Header onSearchChange={setSearchQuery} />
+      {searchQuery ? (
+        <div className="search-results">
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <h2>Результаты поиска по: "{searchQuery}"</h2>
+            <button
+              onClick={handleClearSearch}
+              style={{
+                background: 'transparent',
+                border: 'none',
+                fontSize: '1.5rem',
+                cursor: 'pointer',
+                color: '#555'
+              }}
+              title="Очистить поиск"
+            >
+              ✖
+            </button>
+          </div>
+          <div className="product-grid">
+            {filteredProducts.length > 0 ? (
+              filteredProducts.map(product => (
+                <ProductCard key={product.id} product={product} />
+              ))
+            ) : (
+              <p>Ничего не найдено.</p>
+            )}
+          </div>
+        </div>
+      ) : (
+        <>
+          <h1>Категории</h1>
+          <CategoryList categories={categories} />
+        </>
+      )}
     </div>
   );
 };
