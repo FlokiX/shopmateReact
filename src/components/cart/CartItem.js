@@ -4,10 +4,11 @@ import './CartItem.css';
 const CartItem = ({ item, onRemove, onUpdate }) => {
   return (
     <div className="cart-item">
-      <img src={process.env.PUBLIC_URL + `/images/${item.image}`} />
+      <img src={process.env.PUBLIC_URL + `/images/${item.image}`} alt={item.name} />
+
       <div className="cart-info">
         <h3>{item.name}</h3>
-        <p>{item.price} ₽</p>
+        <p>{item.price} $</p>
         <div className="quantity-controls">
           <button onClick={() => onUpdate(item.id, item.quantity - 1)} disabled={item.quantity <= 1}>-</button>
           <span>{item.quantity}</span>

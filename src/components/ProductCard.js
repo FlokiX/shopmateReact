@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect } from 'react';
-import { CartContext } from '../contexts/CartContext'; // Импортируем контекст корзины
+import { CartContext } from '../contexts/CartContext'; 
 import './ProductCard.css';
 
 function ProductCard({ product }) {
@@ -8,25 +8,26 @@ function ProductCard({ product }) {
 
   // Проверка, есть ли продукт в корзине
   useEffect(() => {
-    const productInCart = cart.some(item => item.id === product.id); // Проверяем, есть ли этот продукт в корзине
-    setIsInCart(productInCart); // Обновляем состояние isInCart
-  }, [cart, product.id]); // Перезапускаем при изменении корзины или id продукта
+    const productInCart = cart.some(item => item.id === product.id); 
+    setIsInCart(productInCart); 
+  }, [cart, product.id]); 
 
   const handleAddToCart = () => {
-    addToCart(product); // Добавляем продукт в корзину
+    addToCart(product); 
   };
 
   return (
     <div className="product-card">
-      <img src={process.env.PUBLIC_URL + `/images/${product.image}`} />
+      <img src={process.env.PUBLIC_URL + `/images/${product.image}`} alt={product.name} />
+
       <h2>{product.name}</h2>
       <p>{product.description}</p>
-      <p>{product.price} ₽</p>
+      <p>{product.price} $</p>
       <button
         onClick={handleAddToCart}
-        disabled={isInCart} // Отключаем кнопку, если товар уже в корзине
+        disabled={isInCart} 
       >
-        {isInCart ? 'Товар в корзине' : 'Добавить в корзину'} {/* Изменяем текст кнопки */}
+        {isInCart ? 'Товар в корзине' : 'Добавить в корзину'} 
       </button>
     </div>
   );

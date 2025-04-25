@@ -10,7 +10,7 @@ const Register = ({ onSuccess }) => {
   const [message, setMessage] = useState('');
 
   const handleRegister = () => {
-    // Проверка на правильный формат Gmail
+    
     const emailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/;
     if (!emailRegex.test(email)) {
       setMessage('Пожалуйста, введите правильный адрес Gmail.');
@@ -19,19 +19,17 @@ const Register = ({ onSuccess }) => {
 
     const newUser = { username, password, phone, email };
 
-    // Получаем существующих пользователей из LocalStorage (если есть)
     const users = JSON.parse(localStorage.getItem('users')) || [];
 
-    // Проверка на существование пользователя
     if (users.some(user => user.username === username)) {
       setMessage('Пользователь с таким именем уже существует.');
       return;
     }
 
-    // Добавление нового пользователя
+    
     users.push(newUser);
 
-    // Сохраняем пользователей обратно в LocalStorage
+   
     localStorage.setItem('users', JSON.stringify(users));
 
     setMessage('Регистрация прошла успешно!');

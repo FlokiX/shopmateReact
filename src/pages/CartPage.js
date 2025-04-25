@@ -16,7 +16,7 @@ const CartPage = () => {
   };
 
   const handleCloseCart = () => {
-    navigate('/'); // Переход на главную страницу
+    navigate('/');
   };
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);

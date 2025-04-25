@@ -4,37 +4,37 @@ import Register from './anth/Register';
 import './Header.css';
 import { Link } from 'react-router-dom';
 
-function Header({ onSearchChange }) {
+function Header({ onSearchChange, isLoggedIn, setIsLoggedIn }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('login');
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Держим локальное состояние
   const [searchInput, setSearchInput] = useState('');
 
-  // При монтировании проверяем состояние авторизации
   useEffect(() => {
     const loggedIn = localStorage.getItem('isLoggedIn');
     if (loggedIn === 'true') {
-      setIsLoggedIn(true); // Если пользователь авторизован, обновляем состояние
+      setIsLoggedIn(true);
     }
-  }, []);
+  }, [setIsLoggedIn]);
 
   const handleOpenModal = () => setIsModalOpen(true);
   const handleCloseModal = () => setIsModalOpen(false);
 
+  // Обработка успешного входа пользователя
   const handleLoginSuccess = () => {
     setIsLoggedIn(true);
-    localStorage.setItem('isLoggedIn', 'true'); // Сохраняем авторизацию
+    localStorage.setItem('isLoggedIn', 'true');
     handleCloseModal();
   };
-
+  // Обработка выхода пользователя из системы
   const handleLogout = () => {
     setIsLoggedIn(false);
-    localStorage.removeItem('isLoggedIn'); // Убираем авторизацию при выходе
+    localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('user'); 
   };
 
   const handleSearch = () => {
     if (onSearchChange) {
-      onSearchChange(searchInput); // передаём в родительский компонент
+      onSearchChange(searchInput);
     }
   };
 

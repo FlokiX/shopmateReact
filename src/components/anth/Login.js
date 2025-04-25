@@ -23,9 +23,9 @@ const Login = ({ onSuccess }) => {
 
     if (user) {
       setMessage('Вход успешен!');
-      localStorage.setItem('isLoggedIn', 'true'); // Сохраняем состояние авторизации
-      localStorage.setItem('username', username); // Сохраняем имя пользователя
-      onSuccess();  // Закрываем модальное окно после успешного входа
+      localStorage.setItem('isLoggedIn', 'true'); //сообщение об успешном входе
+      localStorage.setItem('username', username); //Сохраняем что пользователь авторизован
+      onSuccess();  
     } else {
       setMessage('Неверное имя пользователя или пароль.');
     }
